@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+
+{% extends 'RO_log/Base.html'%}
+
+{% block content %}
+<div class="container mx-auto my-5">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Pay Period </th>
+        <th scope="col">Sold Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for payperiodhour in payperiodhours %}
+      <tr>
+        <th>{{payperiodhour.name}}</th>
+        <td>{{payperiodhour.ro__hours_sold__sum|floatformat}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock%}

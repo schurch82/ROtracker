@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+{% extends 'RO_log/Base.html'%}
+{% block content %}
+
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-sm-6">
+      <div class="card  text-center">
+        <div class="card-header">
+          Hours for today
+        </div>
+        <div class="card-body">
+          <h5>{{ daily_total|floatformat|default:0 }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card text-center">
+          <div class="card-header">
+          Hours for this month
+          </div>
+          <div class="card-body">
+            <h5>{{ monthly_hours|floatformat|default:0 }}</h5>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- table -->
+  <div class="d-grid gap-2 col-6 mx-auto my-5">
+    <a class="btn rounded-pill" href="{% url 'RO_log:create' %}">Add New RO</a>
+  </div>
+<div class="container">
+<table class="table table-sm table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">RO number</th>
+      <th scope="col">Hours Sold</th>
+      <th scope="col">Work Performed</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ro in daily_ros %}
+    <tr>
+      <th>{{ro.RO_number}}</th>
+      <td>{{ro.hours_sold}}</td>
+      <td>{{ro.work_performed}}</td>
+      <td>
+        <a href="{% url 'RO_log:update' pk=ro.pk %}">
+          <i class="bi-pencil-fill"></i>
+        </a>
+        <a href="{% url 'RO_log:delete' pk=ro.pk %}">
+          <i class="bi-trash-fill" style = color:red;></i>
+        </a>
+      </td>
+    </tr>
+      {% empty %}
+    <tr>
+      <td>No Ro's today</td>
+    </tr>
+
+    {% endfor %}
+</div>
+
+
+
+{% endblock%}

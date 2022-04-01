@@ -1,0 +1,62 @@
+.delete-card{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+}
+
+.Roform {
+  width: 50%;
+  margin-top:5rem;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #0000ff08;
+  border-radius: .3rem;
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navigation{
+  background-image: linear-gradient(to left, rgb(0 102 255 / 32%), rgb(19 22 167));
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#nav-search{
+  margin-left: 100px;
+}
+
+.card{
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-header{
+  background-color:#90abef
+}
+
+
+.btn{
+  background-color: #5a6acf;
+  color:white;
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table{
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tbody{
+  padding-left: 1px;
+  padding-right: 4px
+
+}
+
+.dash{
+  color: #ecbe00;
+}
+
+.navbar-text{
+  font-size: small;
+  color: red;
+}

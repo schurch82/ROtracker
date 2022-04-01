@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+{% extends 'RO_log/Base.html'%}
+{% block content %}
+
+<div class="d-grid gap-2 col-6 mx-auto my-5">
+  <a class="btn rounded-pill" href="{% url 'RO_log:payperiod-create' %}">Add New Pay Period</a>
+</div>
+
+<div class="container mx-auto my-5">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Pay Period</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for payperiod in payperiods %}
+      <tr>
+        <th>{{payperiod.name}}</th>
+        <td>{{payperiod.start_date}}</td>
+        <td>{{payperiod.end_date}}</td>
+        <td>
+          <a href="{% url 'RO_log:payperiod-update' pk=payperiod.pk %}">
+            <i class="bi-pencil-fill"></i>
+          </a>
+          <a href="{% url 'RO_log:payperiod-delete' pk=payperiod.pk %}">
+            <i class="bi-trash-fill"style = color:red;></i>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+
+  {% endblock %}

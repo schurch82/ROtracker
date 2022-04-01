@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+{% extends 'RO_log/Base.html'%}
+{% block content %}
+
+<div class="delete-card">
+    <div class="card w-50 text-center ">
+       <h5 class="card-header">Delete Pay Period {{payperiod.name}}?</h5>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            <div class="d-grid gap-2 mt-3">
+              <input type="submit" class="btn rounded-pill" value="Delete">
+            </div>
+            <div class="d-grid gap-2 mt-3">
+              <a class="btn rounded-pill" href="{% url 'RO_log:payperiod-list' %}">Cancel</a>
+            </div>
+          </form>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

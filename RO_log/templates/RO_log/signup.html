@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+{% extends 'RO_log/Base.html'%}
+{% load crispy_forms_tags %}
+
+{% block navblock %}
+{% endblock %}
+
+{% block content %}
+
+  <body>
+    <div class="Roform">
+      <div class="d-flex justify-content-center">
+          <div class="col-4">
+            <form method="POST" class="post-form">
+              <h1>Sign-Up</h1>
+              {% csrf_token %}
+              {{form|crispy}}
+              <div class="d-grid gap-2 mt-3">
+                <button type="submit" class="btn rounded-pill">SignUp</button>
+              </div>
+              <p><small>Already a member? click <a href="{% url 'RO_log:login' %}">here</a> to log in!</small></p>
+            </form>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+{% endblock %}

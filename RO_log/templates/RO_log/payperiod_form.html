@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+{% extends 'RO_log/Base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="Roform">
+  <div class="d-flex justify-content-center">
+      <div class="col-4">
+        <form method="POST" class="post-form">
+          <h1>Pay Period form</h1>
+          {% csrf_token %}
+          {{form|crispy}}
+          <div class="d-grid gap-2 mt-3">
+            <button type="submit" class="btn rounded-pill">Submit</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
